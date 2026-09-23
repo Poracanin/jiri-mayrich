@@ -57,3 +57,11 @@ Registrace soukromého projektu proběhla. Nahrání zdrojů, fotografií a dal�
 - Na šířkách do 700 px je hero portrét skrytý a výška sekce se přizpůsobuje obsahu. Desktopový portrét zůstává viditelný.
 - Vizuálně ověřeno 495 × 810, 320 × 640 a desktop 1272 × 810; detail a přechod do průvodce také na 390 × 844. Bez vodorovného přetečení, malé menu lze posouvat a zavírací tlačítko zůstává dostupné. Při přechodu na desktop se menu samo zavře.
 - Kontrola syntaxe JavaScriptu, unikátních ID a lokálních souborů bez chyb. Konzole při ověření bez varování a chyb. Vše zůstává lokálně.
+
+## Mobilní hero přes první obrazovku — 23. 9. 2026
+
+- Mobilní hero má minimální výšku `100svh` po odečtení hlavičky. Na 388 × 810 končí přesně na spodním okraji první obrazovky; na krátkých displejích se podle potřeby prodlouží a obsah se neořízne.
+- Tlačítko pro prodej je přes celou dostupnou šířku, s doprovodným textem, jemným zaoblením a samostatnou šipkou. Ověřeno otevření průvodce a návrat po zavření.
+- Mobilní fotografie se pomalu přibližuje a posouvá v cyklu 22 sekund. Ovladač pozastaví i obnoví pohyb. Animace je podmíněna `prefers-reduced-motion: no-preference`; mimo záběr nebo při skryté stránce se pozastaví.
+- Vizuálně ověřeny rozměry 388 × 810, 320 × 640 a 1272 × 810. Bez vodorovného přetečení; desktopový portrét a původní rozměry tlačítka zachovány.
+- Syntaxe hero.js, odkazy na místní soubory, SVG symboly a unikátní HTML ID ověřeny bez chyb.

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="sell-wizard.css">
   <link rel="stylesheet" href="mobile-menu.css">
+  <link rel="stylesheet" href="hero.css">
 </head>
 <body>
   <a class="skip-link" href="#obsah">Přejít k obsahu</a>
@@ -50,7 +51,7 @@
       <img class="hero-background" src="assets/cover.webp" alt="Večerní panorama osvětlených věžových domů" fetchpriority="high" width="1672" height="941">
       <div class="hero-shade"></div>
       <div class="container hero-inner">
-        <div class="hero-copy"><p class="eyebrow light"><span></span> V REALITÁCH OSOBNĚ · OD ROKU 2008</p><h1 id="hero-title">Dobrý prodej<br>začíná <em>důvěrou</em></h1><p class="hero-description">Prodat, koupit, nebo zjistit cenu nemovitosti?<br>Pomohu vám udělat další krok. S klidem a jistotou,<br class="desktop-break"> že na to nejste sami.</p><div class="hero-actions"><button class="button button-gold" type="button" data-sell-open aria-haspopup="dialog" aria-controls="sell-dialog">Chci prodat nemovitost <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#arrow-right"></use></svg></button><a class="hero-secondary" href="#nemovitosti">Hledám nový domov <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#arrow-right"></use></svg></a></div><div class="hero-locations"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#map-pin"></use></svg> KLADNO <i></i> PRAHA <i></i> STŘEDOČESKÝ KRAJ</div></div>
+        <div class="hero-copy"><p class="eyebrow light"><span></span> V REALITÁCH OSOBNĚ · OD ROKU 2008</p><h1 id="hero-title">Dobrý prodej<br>začíná <em>důvěrou</em></h1><p class="hero-description">Prodat, koupit, nebo zjistit cenu nemovitosti?<br>Pomohu vám udělat další krok. S klidem a jistotou,<br class="desktop-break"> že na to nejste sami.</p><div class="hero-actions"><button class="button button-gold hero-sell" type="button" data-sell-open aria-haspopup="dialog" aria-controls="sell-dialog"><span class="hero-sell-copy"><strong>Chci prodat nemovitost</strong><small>Nezávazně. Stačí pár údajů.</small></span><span class="hero-sell-arrow" aria-hidden="true"><svg class="icon" focusable="false"><use href="assets/icons.svg#arrow-right"></use></svg></span></button><a class="hero-secondary" href="#nemovitosti">Hledám nový domov <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#arrow-right"></use></svg></a></div><div class="hero-footer"><div class="hero-locations"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#map-pin"></use></svg> KLADNO <i></i> PRAHA <i></i> STŘEDOČESKÝ KRAJ</div><button class="hero-motion-toggle" type="button" aria-label="Pozastavit pohyb pozadí" title="Pozastavit pohyb pozadí"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#pause"></use></svg></button></div></div>
         <div class="hero-portrait"><img src="assets/jiri-mayrich.webp" alt="Ing. Jiří Mayrich, MBA" width="698" height="698" fetchpriority="high"><div class="portrait-caption"><span class="portrait-name">Ing. Jiří Mayrich, MBA</span><span class="portrait-role">Certifikovaný realitní makléř<br>a lektor RVI</span></div></div>
         <a href="#nemovitosti" class="hero-scroll" aria-label="Přejít na nabídku nemovitostí">PROHLÉDNOUT NABÍDKU <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#arrow-down"></use></svg></a>
       </div>
@@ -163,5 +164,6 @@
   <script src="app.js" defer></script>
   <script src="sell-wizard.js" defer></script>
   <script src="mobile-menu.js" defer></script>
+  <script src="hero.js" defer></script>
 </body>
 </html>

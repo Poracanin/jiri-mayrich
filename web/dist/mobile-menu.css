@@ -89,12 +89,6 @@ html.menu-open body { overflow: hidden; }
 }
 @media (max-width: 700px) {
   .menu-toggle { width: 44px; height: 44px; padding: 9px; }
-  .hero { height: auto; min-height: 0; }
-  .hero-inner { height: auto; }
-  .hero-copy { max-width: none; padding: 44px 0 54px; }
-  .hero-portrait { display: none; }
-  .hero-description { max-width: 440px; }
-  .hero-scroll { display: none; }
 }
 @media (max-width: 360px) {
   .menu-panel-header { padding: 18px; gap: 8px; }

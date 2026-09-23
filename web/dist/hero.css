@@ -1,0 +1,102 @@
+.hero-sell .hero-sell-copy,
+.hero-sell-copy strong { font: inherit; }
+.hero-sell-copy small,
+.hero-motion-toggle { display: none; }
+.hero-sell-arrow { display: inline-flex; align-items: center; }
+
+@media (max-width: 700px) {
+  .hero {
+    --hero-header-height: 92px;
+    height: auto;
+    min-height: calc(100vh - var(--hero-header-height));
+    min-height: calc(100svh - var(--hero-header-height));
+  }
+  .hero-inner { display: flex; height: auto; min-height: inherit; }
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+    padding: clamp(34px, 6svh, 64px) 0 max(26px, env(safe-area-inset-bottom));
+  }
+  .hero-copy > * { flex-shrink: 0; }
+  .hero .eyebrow { margin: 0 0 27px; }
+  .hero h1 { margin: 0 0 26px; }
+  .hero-description { max-width: 440px; line-height: 1.8; }
+  .hero-portrait, .hero-scroll { display: none; }
+  .hero-shade {
+    background: linear-gradient(180deg, #0b2231d9 0%, #0c2331ad 43%, #0c233144 72%, #091b28bf 100%);
+  }
+  .hero-actions { align-items: stretch; gap: 15px; margin-top: clamp(30px, 5svh, 46px); }
+  .hero-actions .hero-sell {
+    justify-content: space-between;
+    width: 100%;
+    min-height: 80px;
+    padding: 17px 18px 17px 22px;
+    gap: 14px;
+    border: 1px solid #ead2a57a;
+    border-radius: 10px;
+    background: linear-gradient(115deg, #dfc28e, #c7a66d);
+    box-shadow: 0 8px 24px #020e1930, inset 0 1px 0 #fff3;
+    text-align: left;
+  }
+  .hero-sell .hero-sell-copy { display: grid; gap: 5px; font-size: 15px; line-height: 1.35; }
+  .hero-sell-copy strong { font-weight: 700; }
+  .hero-sell-copy small { display: block; font-size: 11px; font-weight: 500; color: #32444b; }
+  .hero-sell .hero-sell-arrow {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #11252e;
+    color: #e5cda0;
+    transition: transform .2s;
+  }
+  .hero-sell-arrow .icon { width: 21px; height: 21px; }
+  .hero-actions .hero-sell:active { transform: scale(.985); }
+  .hero-secondary { align-self: center; min-height: 44px; padding: 7px 0; border-bottom-color: #ffffff38; }
+  .hero-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 38px; }
+  .hero-locations { margin-top: 0; gap: 8px; letter-spacing: .6px; }
+  .hero-motion-toggle {
+    place-items: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid #ffffff38;
+    border-radius: 50%;
+    background: #0b213475;
+    color: #e2c998;
+  }
+  .hero-motion-toggle .icon { width: 18px; height: 18px; }
+}
+@media (max-width: 600px) {
+  .hero { --hero-header-height: 78px; }
+}
+@media (max-width: 360px) {
+  .hero-sell .hero-sell-copy { font-size: 13px; }
+  .hero-sell-copy small { font-size: 10px; }
+  .hero-actions .hero-sell { padding-left: 16px; padding-right: 14px; }
+  .hero-footer { gap: 6px; }
+  .hero-locations { font-size: 7px; gap: 6px; letter-spacing: .4px; }
+}
+@media (max-width: 700px) and (prefers-reduced-motion: no-preference) {
+  .hero-background {
+    transform-origin: 61% 50%;
+    animation: hero-drift 22s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+  .hero-motion-toggle { display: grid; }
+  .hero[data-motion-paused] .hero-background,
+  .hero[data-motion-idle] .hero-background { animation-play-state: paused; }
+  @keyframes hero-drift {
+    from { transform: scale(1.035) translate3d(-.35%, 0, 0); }
+    to { transform: scale(1.09) translate3d(.6%, -.4%, 0); }
+  }
+}
+@media (max-width: 700px) and (hover: hover) and (pointer: fine) {
+  .hero-actions .hero-sell:hover { background: linear-gradient(115deg, #ecd3a6, #d3b37c); }
+  .hero-sell:hover .hero-sell-arrow { transform: translateX(3px); }
+}
