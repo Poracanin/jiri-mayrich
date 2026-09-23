@@ -8,7 +8,7 @@
     const label = paused ? 'Spustit pohyb pozadí' : 'Pozastavit pohyb pozadí';
     toggle.setAttribute('aria-label', label);
     toggle.title = label;
-    toggle.querySelector('use').setAttribute('href', `assets/icons.svg#${paused ? 'play' : 'pause'}`);
+    toggle.querySelector('path').setAttribute('d', paused ? 'm8 5 11 7-11 7Z' : 'M9 5v14M15 5v14');
   });
 
   let inView = true;
