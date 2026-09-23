@@ -27,7 +27,7 @@
   .hero-shade {
     background: linear-gradient(180deg, #0b2231d9 0%, #0c2331ad 43%, #0c233144 72%, #091b28bf 100%);
   }
-  .hero-actions { align-items: stretch; gap: 15px; margin-top: clamp(30px, 5svh, 46px); }
+  .hero-actions { align-items: stretch; gap: 15px; margin-top: auto; padding-top: 30px; }
   .hero-actions .hero-sell {
     justify-content: space-between;
     width: 100%;
@@ -57,7 +57,7 @@
   .hero-sell-arrow .icon { width: 21px; height: 21px; }
   .hero-actions .hero-sell:active { transform: scale(.985); }
   .hero-secondary { align-self: center; min-height: 44px; padding: 7px 0; border-bottom-color: #ffffff38; }
-  .hero-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 38px; }
+  .hero-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 0; padding-top: 20px; }
   .hero-locations { margin-top: 0; gap: 8px; letter-spacing: .6px; }
   .hero-motion-toggle {
     place-items: center;
