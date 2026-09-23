@@ -9,6 +9,7 @@
   <link rel="preload" href="assets/cover.webp" as="image">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="sell-wizard.css">
+  <link rel="stylesheet" href="mobile-menu.css">
 </head>
 <body>
   <a class="skip-link" href="#obsah">Přejít k obsahu</a>
@@ -17,10 +18,33 @@
       <a href="./" class="brand" aria-label="Ing. Jiří Mayrich, MBA — úvodní stránka"><span class="monogram" aria-hidden="true">JM</span><span class="brand-text">Ing. Jiří Mayrich, MBA<small>REALITNÍ MAKLÉŘ & LEKTOR</small></span></a>
       <nav class="desktop-nav" aria-label="Hlavní navigace"><a href="#nemovitosti">Nemovitosti</a><a href="#sluzby">Služby</a><a href="#o-mne">O mně</a><a href="#reference">Reference</a><a href="#kontakt">Kontakt</a></nav>
       <a class="header-phone" href="tel:+420721889434"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#phone"></use></svg> <span>+420 721 889 434</span></a>
-      <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+      <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-menu" aria-haspopup="dialog" type="button"><span></span><span></span></button>
     </div>
-    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobilní navigace" hidden><a href="#nemovitosti">Nemovitosti</a><a href="#sluzby">Služby</a><a href="#o-mne">O mně</a><a href="#reference">Reference</a><a href="#kontakt">Kontakt</a><a href="tel:+420721889434">Zavolat +420 721 889 434</a></nav>
   </header>
+  <dialog id="mobile-menu" class="mobile-menu" aria-labelledby="mobile-menu-title">
+    <div class="menu-panel-header">
+      <div class="menu-identity"><span class="menu-monogram" aria-hidden="true">JM</span><div><strong>Ing. Jiří Mayrich, MBA</strong><span>V realitách osobně</span></div></div>
+      <button class="menu-close" type="button" aria-label="Zavřít menu" autofocus><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#x"></use></svg></button>
+    </div>
+    <div class="menu-panel-body">
+      <h2 id="mobile-menu-title" class="menu-eyebrow">Rozhlédněte se</h2>
+      <nav class="menu-links" aria-label="Mobilní navigace">
+        <a href="#nemovitosti"><span class="menu-link-number" aria-hidden="true">01</span><span>Nemovitosti</span><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+        <a href="#sluzby"><span class="menu-link-number" aria-hidden="true">02</span><span>Služby</span><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+        <a href="#o-mne"><span class="menu-link-number" aria-hidden="true">03</span><span>O mně</span><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+        <a href="#reference"><span class="menu-link-number" aria-hidden="true">04</span><span>Reference</span><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+        <a href="#kontakt"><span class="menu-link-number" aria-hidden="true">05</span><span>Kontakt</span><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+      </nav>
+      <div class="menu-sell">
+        <p>Uvažujete o prodeji?</p>
+        <a class="button button-gold" href="index.html?prodej=1" data-menu-sell>Chci prodat nemovitost <svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+      </div>
+      <div class="menu-contact">
+        <a class="menu-phone" href="tel:+420721889434"><span class="menu-phone-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="assets/icons.svg#phone"></use></svg></span><span><small>Zavolejte mi přímo</small><strong>+420 721 889 434</strong></span></a>
+        <a class="menu-email" href="mailto:jmayrich@jaros-partners.cz">jmayrich@jaros-partners.cz</a>
+      </div>
+    </div>
+  </dialog>
   <main id="obsah">
     <section class="hero" aria-labelledby="hero-title">
       <img class="hero-background" src="assets/cover.webp" alt="Večerní panorama osvětlených věžových domů" fetchpriority="high" width="1672" height="941">
@@ -138,5 +162,6 @@
   </main>
   <script src="app.js" defer></script>
   <script src="sell-wizard.js" defer></script>
+  <script src="mobile-menu.js" defer></script>
 </body>
 </html>

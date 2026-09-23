@@ -38,3 +38,11 @@ Jde o funkční návrh. Formuláře připravují e-mailovou zprávu, kterou náv
 Nabídky a ceny odpovídají podkladům archivovaným 23. září 2026. Mapa a externí videoprohlídky se načítají až po kliknutí návštěvníka. Nahrání do tohoto repozitáře samo o sobě web nepublikuje a nepřepisuje původní web.
 
 Duplicitní zdrojový archiv `podklady/` a místní konfigurace hostingu se do repozitáře nezahrnují. Všechny soubory potřebné ke spuštění návrhu jsou v `web/dist/`.
+
+## Zveřejnění náhledu na GitHub Pages
+
+Workflow `.github/workflows/pages.yml` publikuje pouze složku `web/dist/`. `index.html` je tedy přímo v kořeni veřejného webu. Build ani instalace závislostí nejsou potřeba.
+
+V nastavení repozitáře **Settings → Pages → Source** musí být vybráno **GitHub Actions**. Publikování se spustí po každém pushi do `main` nebo ručně přes **Actions → Publish website to GitHub Pages → Run workflow**.
+
+Adresa náhledu po úspěšném nasazení: [poracanin.github.io/jiri-mayrich/](https://poracanin.github.io/jiri-mayrich/). Původní doména `jiri-mayrich.cz` se tím nemění. Stav nasazení a případné chyby jsou v záložce Actions.

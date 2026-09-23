@@ -1,0 +1,114 @@
+/* Shared modal navigation for the homepage and property details. */
+html.menu-open,
+html.menu-open body { overflow: hidden; }
+
+.mobile-menu {
+  width: min(520px, calc(100% - 24px));
+  max-width: none;
+  max-height: calc(100dvh - 24px);
+  margin: auto;
+  padding: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  color-scheme: dark;
+  scrollbar-width: thin;
+  scrollbar-color: #50616a transparent;
+  border: 1px solid #c7a66d40;
+  border-radius: 16px;
+  background: var(--navy-deep);
+  color: #f6f7f5;
+  box-shadow: 0 24px 90px #0008;
+}
+.mobile-menu::backdrop {
+  background: #041019b8;
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+.menu-panel-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 24px 26px;
+  background: var(--navy-deep);
+  border-bottom: 1px solid #ffffff13;
+}
+.menu-identity { display: flex; align-items: center; gap: 14px; }
+.menu-monogram { color: var(--gold-light); font-size: 32px; line-height: 1; letter-spacing: -3px; }
+.menu-identity strong { display: block; font-size: 14px; font-weight: 600; letter-spacing: -.35px; }
+.menu-identity div>span { display: block; margin-top: 4px; font-size: 10px; color: #b3c0c5; }
+.menu-close {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ffffff24;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--gold-light);
+  transition: background .2s, border-color .2s;
+}
+.menu-close:hover { background: #ffffff0d; border-color: var(--gold); }
+.menu-panel-body { padding: 26px; }
+.mobile-menu .menu-eyebrow { margin: 0 0 14px; color: var(--gold-light); font: 600 10px/1.5 var(--sans); letter-spacing: 2px; text-transform: uppercase; }
+.menu-links { display: grid; }
+.menu-links a {
+  display: grid;
+  grid-template-columns: 24px 1fr 24px;
+  align-items: center;
+  gap: 12px;
+  min-height: 62px;
+  border-bottom: 1px solid #ffffff17;
+  font-size: 26px;
+  line-height: 1.3;
+  letter-spacing: -.75px;
+  transition: color .2s;
+}
+.menu-link-number { color: #a8b7be; font-size: 10px; letter-spacing: .5px; font-variant-numeric: tabular-nums; }
+.menu-links .icon { width: 20px; height: 20px; color: var(--gold); transition: transform .2s; }
+.menu-links a:hover { color: var(--gold-light); }
+.menu-links a:hover .icon { transform: translateX(4px); }
+.menu-sell { padding: 25px 0 24px; }
+.menu-sell p { color: #c3cdd1; font-size: 12px; margin-bottom: 11px; }
+.menu-sell .button { display: flex; justify-content: space-between; width: 100%; gap: 12px; border-radius: 4px; }
+.menu-contact { padding-top: 21px; border-top: 1px solid #ffffff17; }
+.menu-phone { display: flex; align-items: center; gap: 13px; width: fit-content; }
+.menu-phone-icon { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid #c7a66d50; border-radius: 50%; color: var(--gold-light); }
+.menu-phone small { display: block; color: #b3c0c5; font-size: 10px; margin-bottom: 2px; }
+.menu-phone strong { display: block; font-size: 19px; font-weight: 500; letter-spacing: -.35px; }
+.menu-email { display: inline-block; margin: 9px 0 0 55px; padding: 6px 0; color: #c3cdd1; font-size: 12px; }
+.menu-phone:hover strong, .menu-email:hover { color: var(--gold-light); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .mobile-menu[open] { animation: menu-appear .22s ease-out; }
+  @keyframes menu-appear { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+}
+@media (max-width: 700px) {
+  .menu-toggle { width: 44px; height: 44px; padding: 9px; }
+  .hero { height: auto; min-height: 0; }
+  .hero-inner { height: auto; }
+  .hero-copy { max-width: none; padding: 44px 0 54px; }
+  .hero-portrait { display: none; }
+  .hero-description { max-width: 440px; }
+  .hero-scroll { display: none; }
+}
+@media (max-width: 360px) {
+  .menu-panel-header { padding: 18px; gap: 8px; }
+  .menu-identity { gap: 10px; }
+  .menu-identity strong { font-size: 12px; }
+  .menu-monogram { font-size: 28px; }
+  .menu-panel-body { padding: 22px 18px; }
+  .menu-links a { font-size: 24px; }
+  .menu-sell .button { padding: 15px; font-size: 13px; }
+  .menu-email { font-size: 11px; }
+}
+@media (max-height: 740px) {
+  .menu-panel-header { padding-top: 16px; padding-bottom: 16px; }
+  .menu-panel-body { padding-top: 18px; padding-bottom: 18px; }
+  .menu-links a { min-height: 54px; }
+  .menu-sell { padding-top: 20px; padding-bottom: 20px; }
+}

@@ -24,10 +24,6 @@ function renderProperties() {
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{currentFilter=button.dataset.filter;expanded=false;document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});renderProperties();}));
 document.querySelector('#sort').addEventListener('change',renderProperties);
 document.querySelector('#show-more').addEventListener('click',()=>{expanded=true;renderProperties();});
-const menuButton=document.querySelector('.menu-toggle');
-menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')!=='true';menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Zavřít menu':'Otevřít menu');document.querySelector('#mobile-nav').hidden=!open;});
-document.querySelectorAll('#mobile-nav a').forEach(a=>a.addEventListener('click',()=>{menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Otevřít menu');document.querySelector('#mobile-nav').hidden=true;}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){menuButton.setAttribute('aria-expanded','false');document.querySelector('#mobile-nav').hidden=true;}});
 fetch('data/nemovitosti.json').then(r=>{if(!r.ok)throw Error('Nepodařilo se načíst nabídku.');return r.json();}).then(data=>{listings=data;renderProperties();const requested=new URLSearchParams(location.search).get('nemovitost');const chosen=data.find(d=>d.id===requested);if(chosen)document.querySelector('[name="message"]').value=`Mám zájem o prohlídku nemovitosti: ${chosen.nazev}. Prosím o domluvení termínu.`;}).catch(()=>{document.querySelector('#property-grid').innerHTML='<p>Nabídku se nepodařilo načíst. <a href="https://www.jiri-mayrich.cz/nemovitosti.html">Prohlédnout původní nabídku</a></p>';});
 
 document.querySelectorAll('[data-dialog]').forEach(button=>button.addEventListener('click',()=>{
@@ -35,7 +31,7 @@ document.querySelectorAll('[data-dialog]').forEach(button=>button.addEventListen
   const iframe=dialog.querySelector('iframe[data-src]');if(iframe&&!iframe.src)iframe.src=iframe.dataset.src;
   dialog.showModal();
 }));
-document.querySelectorAll('dialog').forEach(dialog=>{
+document.querySelectorAll('dialog:not(#mobile-menu)').forEach(dialog=>{
   dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
   dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
   dialog.addEventListener('close',()=>{dialog.querySelector('video')?.pause();});

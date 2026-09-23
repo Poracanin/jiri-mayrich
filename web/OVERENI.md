@@ -48,3 +48,12 @@ Registrace soukromého projektu proběhla. Nahrání zdrojů, fotografií a dal�
 - Text kariérní spolupráce navazuje na původní stránku moznosti-spoluprace.html a propojuje nabídku podpory s lektorskou praxí.
 - Meta popis rozlišuje působení v realitách od roku 2008 od certifikace a lektorské role, u nichž začátek doložen není.
 - Kontrola syntaxe detail.js a lokálních souborových odkazů bez chyb. Vizuální kontrola části O mně na desktopu a mobilu.
+
+## Mobilní menu a hero — 23. 9. 2026
+
+- Původní rozbalovací navigaci nahrazuje společné modální menu na úvodní stránce i detailu nemovitosti. Obsahuje číslované odkazy, kontakt a vstup do průvodce prodejem.
+- Ověřeno zavření křížkem, Escape i kliknutím na pozadí, uzamčení posouvání stránky, cyklus Tab / Shift+Tab a návrat fokusu. Odkaz na sekci zavře menu a přesune fokus na její nadpis.
+- Přechod do průvodce prodejem funguje z obou stránek bez překrytí dvou modalů; zavření průvodce vrací fokus na viditelné tlačítko v hero.
+- Na šířkách do 700 px je hero portrét skrytý a výška sekce se přizpůsobuje obsahu. Desktopový portrét zůstává viditelný.
+- Vizuálně ověřeno 495 × 810, 320 × 640 a desktop 1272 × 810; detail a přechod do průvodce také na 390 × 844. Bez vodorovného přetečení, malé menu lze posouvat a zavírací tlačítko zůstává dostupné. Při přechodu na desktop se menu samo zavře.
+- Kontrola syntaxe JavaScriptu, unikátních ID a lokálních souborů bez chyb. Konzole při ověření bez varování a chyb. Vše zůstává lokálně.

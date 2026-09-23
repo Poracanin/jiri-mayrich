@@ -25,7 +25,3 @@ gallery.querySelector('.dialog-close').addEventListener('click',()=>gallery.clos
 gallery.querySelector('.gallery-prev').addEventListener('click',()=>showPhoto(photoIndex-1));
 gallery.querySelector('.gallery-next').addEventListener('click',()=>showPhoto(photoIndex+1));
 document.addEventListener('keydown',e=>{if(gallery.open&&e.key==='ArrowLeft'){e.preventDefault();showPhoto(photoIndex-1);}if(gallery.open&&e.key==='ArrowRight'){e.preventDefault();showPhoto(photoIndex+1);}});
-const menuButton=document.querySelector('.menu-toggle');
-menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')!=='true';menuButton.setAttribute('aria-expanded',String(open));document.getElementById('mobile-nav').hidden=!open;});
-
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){menuButton.setAttribute("aria-expanded","false");document.getElementById("mobile-nav").hidden=true;}});
