@@ -1,0 +1,119 @@
+html.sell-open { overflow: hidden; }
+.sell-dialog {
+  width: min(970px, calc(100% - 48px));
+  max-width: none;
+  max-height: calc(100dvh - 48px);
+  padding: 0;
+  border: 0;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 28px 100px #0006;
+  overflow: auto;
+}
+.sell-dialog::backdrop { background: #04141dcc; backdrop-filter: blur(7px); }
+.sell-close-bar { position: sticky; top: 0; height: 0; z-index: 5; }
+.sell-layout { display: grid; grid-template-columns: 280px minmax(0, 1fr); min-height: 635px; }
+.sell-aside { padding: 42px 32px 30px; background: var(--navy); color: white; display: flex; flex-direction: column; }
+.sell-aside > .eyebrow { font-size: 10px; letter-spacing: 1.8px; }
+.sell-aside-title { font-size: 31px; line-height: 1.3; letter-spacing: -1.1px; margin: 12px 0 20px; }
+.sell-aside-title span { color: var(--gold-light); }
+.sell-aside-copy { color: #c9d3d6; font-size: 14px; line-height: 1.85; }
+.sell-aside-note { display: flex; align-items: center; gap: 9px; margin-top: 24px; color: var(--gold-light); font-size: 12px; }
+.sell-aside-note .icon { width: 17px; height: 17px; }
+.sell-agent { margin-top: auto; padding-top: 36px; }
+.sell-agent img { width: 104px; height: 104px; object-fit: cover; border-radius: 50%; background: #223944; margin-bottom: 18px; }
+.sell-agent strong { display: block; font-size: 14px; font-weight: 500; }
+.sell-agent small { display: block; margin-top: 6px; font-size: 11px; color: #b8c8ce; }
+.sell-main { min-width: 0; position: relative; padding: 36px 38px 28px; }
+.sell-dialog .dialog-close { right: 14px; top: 14px; width: 36px; height: 36px; background: #ffffffed; color: #78858a; }
+.sell-dialog .dialog-close:hover { background: var(--soft); color: var(--ink); }
+.sell-kicker { display: flex; justify-content: space-between; gap: 20px; padding-right: 23px; font-size: 11px; color: var(--muted); margin-bottom: 25px; }
+.sell-kicker > span:first-child { color: #9d7b43; font-weight: 600; }
+.sell-progress { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 0; margin: 0 0 32px; }
+.sell-progress button { background: none; border-top: 2px solid #e4e8e5; display: block; width: 100%; text-align: left; padding: 9px 0 0; color: #849095; font-size: 11px; white-space: nowrap; }
+.sell-progress button span { margin-right: 6px; }
+.sell-progress button:disabled { cursor: default; color: #9aa5aa; }
+.sell-progress button[aria-current] { border-color: var(--gold); color: var(--ink); font-weight: 700; }
+.sell-progress button.is-complete { border-color: #53696b; color: #53696b; }
+.sell-form { display: flex; flex-direction: column; }
+.sell-step { border: 0; padding: 0; margin: 0; min-width: 0; }
+.sell-dialog h2 { font: 500 29px/1.3 var(--display); letter-spacing: -1px; margin: 0 0 10px; outline: none; }
+.sell-step-intro { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 25px; }
+.sell-choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.sell-choice { position: relative; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 13px; padding: 18px; cursor: pointer; min-height: 98px; background: white; transition: border-color .15s, background .15s; }
+.sell-choice:hover { border-color: #a7b4b6; background: #fafbf9; }
+.sell-choice input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.sell-choice > .icon { width: 27px; height: 27px; color: #829295; stroke-width: 1.4; }
+.sell-choice > span { font-size: 14px; font-weight: 500; }
+.sell-choice::after { content: ''; position: absolute; right: 15px; top: 17px; width: 14px; height: 14px; border: 1px solid #cbd2d1; border-radius: 50%; }
+.sell-choice:has(input:checked) { border-color: #b9985e; background: #fcf9f2; }
+.sell-choice:has(input:checked) > .icon { color: #a48044; }
+.sell-choice:has(input:checked)::after { border: 4px solid #b9985e; background: #fff; }
+.sell-choice:has(input:focus-visible) { outline: 3px solid var(--gold); outline-offset: 3px; }
+.sell-choices-time { grid-template-columns: 1fr; gap: 10px; }
+.sell-choices-time .sell-choice { min-height: 56px; justify-content: center; padding: 14px 45px 14px 18px; gap: 0; }
+.sell-choices-time .sell-choice::after { top: 20px; }
+.sell-field { display: block; font-size: 12px; font-weight: 600; margin-bottom: 18px; }
+.sell-field > span { color: var(--muted); font-weight: 400; font-size: 11px; }
+.sell-field input, .sell-field textarea { display: block; width: 100%; border: 1px solid #dbe0dd; background: #fff; border-radius: 0; padding: 13px 14px; color: var(--ink); margin-top: 7px; font-size: 15px; font-weight: 400; line-height: 1.5; }
+.sell-field input::placeholder, .sell-field textarea::placeholder { color: #929c9e; opacity: 1; }
+.sell-field input:focus, .sell-field textarea:focus { border-color: #a78852; }
+.sell-field textarea { resize: vertical; min-height: 84px; }
+.sell-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.sell-note-field { margin-top: 21px; }
+.sell-field-help { display: flex; gap: 11px; align-items: flex-start; font-size: 12px; line-height: 1.8; color: var(--muted); background: var(--soft); padding: 14px 16px; }
+.sell-field-help .icon { margin-top: 2px; width: 18px; height: 18px; color: #9d7b43; }
+.sell-contact-summary { padding: 12px 15px; margin-bottom: 23px; font-size: 12px; color: #6c695d; border-left: 2px solid var(--gold); background: #faf8f2; overflow-wrap: anywhere; }
+.sell-contact-note { font-size: 11px; color: var(--muted); line-height: 1.8; margin-top: 2px; }
+.sell-error { min-height: 23px; font-size: 12px; line-height: 1.6; color: #a13f2e; margin: 12px 0 7px; }
+.sell-footer { display: flex; justify-content: space-between; align-items: center; gap: 16px; border-top: 1px solid var(--line); padding-top: 20px; }
+.sell-back { display: inline-flex; align-items: center; gap: 8px; background: none; padding: 14px 0; color: var(--muted); font-size: 13px; }
+.sell-footer .button { min-height: 50px; padding: 13px 22px; gap: 27px; margin-left: auto; }
+.sell-footer .button > span { font-size: 13px; font-weight: 700; }
+.sell-footer .button:hover { transform: none; }
+.sell-result { padding-top: 35px; }
+.sell-result-mark { width: 60px; height: 60px; display: grid; place-items: center; background: #f4efe3; color: #a48044; border-radius: 50%; margin-bottom: 27px; }
+.sell-result-mark .icon { width: 26px; height: 26px; }
+.sell-result > p { font-size: 14px; line-height: 1.85; color: var(--muted); }
+.sell-result-card { padding: 21px 0; margin: 22px 0; border-block: 1px solid var(--line); }
+.sell-result-card > p { font-size: 14px; color: var(--ink); overflow-wrap: anywhere; }
+.sell-result-card > small { display: block; font-size: 12px; line-height: 1.9; color: var(--muted); margin-top: 10px; overflow-wrap: anywhere; }
+.sell-result .button { width: 100%; gap: 16px; }
+.sell-edit { display: block; margin: 18px auto 0; padding: 8px 0; background: none; color: var(--muted); border-bottom: 1px solid var(--line); font-size: 12px; }
+@media (max-width: 800px) {
+  .sell-dialog { width: min(620px, calc(100% - 32px)); max-height: calc(100dvh - 32px); }
+  .sell-layout { grid-template-columns: 1fr; min-height: 0; }
+  .sell-aside { display: none; }
+  .sell-main { padding: 36px 32px 28px; }
+}
+@media (max-width: 480px) {
+  .sell-dialog { width: calc(100% - 20px); max-height: calc(100dvh - 20px); }
+  .sell-main { padding: 28px 20px 20px; }
+  .sell-kicker { padding-right: 22px; font-size: 10px; gap: 10px; margin-bottom: 24px; }
+  .sell-dialog .dialog-close { right: 5px; top: 13px; }
+  .sell-progress { gap: 9px; margin-bottom: 27px; }
+  .sell-progress button { font-size: 10px; padding-top: 8px; }
+  .sell-progress button span { display: none; }
+  .sell-dialog h2 { font-size: 26px; letter-spacing: -.8px; }
+  .sell-step-intro { font-size: 13px; margin-bottom: 22px; }
+  .sell-choices { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .sell-choices-time { grid-template-columns: 1fr; }
+  .sell-contact-channels { grid-template-columns: 1fr; gap: 0; }
+  .sell-choice { min-height: 93px; padding: 15px; gap: 11px; }
+  .sell-choice > span { font-size: 13px; }
+  .sell-field-row { gap: 12px; }
+  .sell-field input, .sell-field textarea { font-size: 16px; padding: 12px 10px; }
+  .sell-field-help { padding: 12px; font-size: 11px; }
+  .sell-error { font-size: 11px; }
+  .sell-footer { gap: 12px; padding-top: 17px; }
+  .sell-footer .button { padding: 13px 16px; gap: 17px; }
+  .sell-footer .button > span { font-size: 12px; }
+  .sell-back { font-size: 12px; }
+  .sell-result { padding-top: 20px; }
+}
+@media (max-width: 350px) {
+  .sell-main { padding-inline: 16px; }
+  .sell-kicker > span:last-child { display: none; }
+  .sell-field-row { grid-template-columns: 1fr; gap: 0; }
+  .sell-dialog h2 { font-size: 24px; }
+}

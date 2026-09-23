@@ -1,0 +1,13 @@
+# Local archive of the original website; the redesigned site has its own assets.
+/podklady/
+
+# Machine-specific hosting metadata, credentials and local configuration.
+.openai/
+.env
+.env.*
+!.env.example
+.DS_Store
+node_modules/
+__pycache__/
+*.pyc
+*.log
